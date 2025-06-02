@@ -7,7 +7,7 @@ Enter in the application folder:
 cd platformchecker
 ```
 
-Be sure that you have and is running an updated version of node (recomended v22.16.0):
+Be sure that you have and is running an updated version of node (recomended **v22.16.0**, but can work smoothly with version above 20.0.0):
 ```bash
 node --version
 ```
@@ -17,6 +17,10 @@ nvm install v22.16.0
 nvm use v22.16.0
 ```
 
+Install the dependencies
+```bash
+npm install
+```
 
 Finally, run the development server:
 
