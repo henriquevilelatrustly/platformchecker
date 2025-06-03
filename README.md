@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Platform Checker v0.0.2
+
+A platform checker to see which platform a bank belongs to once a URL (or batch with URLs) is/are provided.
 
 ## Ruuning the application
 
@@ -30,7 +32,7 @@ npm run dev
 
 Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
----
+## More Info
 
 ### FIs covered on this version (and possible issues not solved yet)
 
@@ -60,6 +62,24 @@ Then, open [http://localhost:3000](http://localhost:3000) with your browser to s
 
 For better performance on requests (and less blocks or timeouts, for example, from PBI 1151 FIs), try to enable US VPN for US Banks.
 
+Now, the .csv batch file SHOULD HAVE this specific format and fields to work correctly:
+| FI_ID | NAME_Original | URL                        | Platform Identified | FI Already on Native? |
+|-------|---------------|----------------------------|---------------------|-----------------------|
+| NN    | Fi name...    | https://xxxxxxx.xxxxx.xxx/ |                     |                       |
+| NNNN  | Fi name....   | https://xxxxxxx.xxxxx.xxx/ |                     |                       |
+
+On CSV text plain: 
+
+```
+FI_ID,NAME_Original,URL,Platform Identified ,FI Already on Native?
+
+NNNN,FiName,url,,
+
+NNNN,FiName,url,,
+```
+
+The only field checked and changed is the **URL** field. Another fields, on output file, will be kept same as in the original file.
+
 ---
 
 ### Troubleshooting
@@ -67,6 +87,10 @@ If some problemas happens during `npm install` command, try to delete local *pac
 
 --- 
 
-### Observartion
- To skip simple CORS block this aplication create an own api server to fetch the data to frontend.
+### Observations
+ - To skip simple CORS block this aplication create an own api server to fetch the data to frontend.
  Maybe, in the future, some improvements can be done on this conection to support proxy access and another features.
+ - This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) with following options enabled:
+    - Next JS v.15
+    - TypeScript
+    - Taiwind (for css)
