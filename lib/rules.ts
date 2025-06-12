@@ -18,6 +18,7 @@ export enum ResponseMatchType {
     NetTeller = 'NetTeller',
     FIS = 'FIS',
     FISHTML = 'FIS HTML',
+    Narmi = 'Narmi',
 
     StatusError = 'Status Error',
     CaptchaBlock = 'Captcha Block',
@@ -130,6 +131,10 @@ const rules: MatchRule[] = [
   {
     pattern: /alkamitech.com/i,
     result: ResponseMatchType.AlkamiBankingSPA,
+  },
+   {
+    pattern: /Narmi/i,
+    result: ResponseMatchType.Narmi,
   },
   {
     pattern: /\/User\/AccessSignin\/Start/i,
