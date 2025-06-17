@@ -19,6 +19,7 @@ export enum ResponseMatchType {
     FIS = 'FIS',
     FISHTML = 'FIS HTML',
     Narmi = 'Narmi',
+    DCI = 'DCI',
 
     StatusError = 'Status Error',
     CaptchaBlock = 'Captcha Block',
@@ -72,6 +73,13 @@ const rules: MatchRule[] = [
              (cookies?.includes("MyVirtualBranch_LTM") ?? false);
     },
     result: ResponseMatchType.MyVirtualBranch
+  },
+  {
+    matcher: (text, cookies, status) => {
+      return text.includes("M$layout$content$PCDZ$MMCA7G7$ctl00$webInputForm$txtLoginName") &&
+             !(cookies?.includes("MyVirtualBranch_LTM") ?? false);
+    },
+    result: ResponseMatchType.Architect
   },
 
   // ✅ Simple pattern-based rules
@@ -132,9 +140,13 @@ const rules: MatchRule[] = [
     pattern: /alkamitech.com/i,
     result: ResponseMatchType.AlkamiBankingSPA,
   },
-   {
+  {
     pattern: /Narmi/i,
     result: ResponseMatchType.Narmi,
+  },
+  {
+    pattern: /DCI with 2010-2011 by tyPoland/i,
+    result: ResponseMatchType.DCI,
   },
   {
     pattern: /\/User\/AccessSignin\/Start/i,
