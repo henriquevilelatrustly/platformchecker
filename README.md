@@ -4,6 +4,12 @@ A platform checker to see which platform a bank belongs to once a URL (or batch 
 
 ## Ruuning the application
 
+### Requirements (recommended):
+- `npm` installer
+- `node`
+- `nvm` (recommended if it's needed to install new versions for node)
+---
+
 Enter in the application folder:
 ```bash
 cd platformchecker
