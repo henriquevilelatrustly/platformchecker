@@ -20,6 +20,7 @@ export enum ResponseMatchType {
     FISHTML = 'FIS HTML',
     Narmi = 'Narmi',
     DCI = 'DCI',
+    Mahalo = 'Mahalo',
 
     StatusError = 'Status Error',
     CaptchaBlock = 'Captcha Block',
@@ -95,6 +96,10 @@ const rules: MatchRule[] = [
   {
     pattern: /validateperfdrive/i,
     result: ResponseMatchType.RadwareBlock,
+  },
+    {
+    pattern: /id=mahalo/i,
+    result: ResponseMatchType.Mahalo,
   },
   {
     pattern: /PBI_PBI1151/i,
