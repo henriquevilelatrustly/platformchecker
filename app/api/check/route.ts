@@ -9,11 +9,14 @@ export async function POST(req: NextRequest) {
   try {
     const response = await fetch(url, {redirect:'manual'});
 
+    if (response.status >= 300 && response.status < 400) { 
+      const location = response.headers.get('location') as string;
+      console.log('Redirect to:', location);
 
-  // if (response.status >= 300 && response.status < 400) {
-  //   const location = response.headers.get('location');
-  //   console.log('Redirect to:', location);
-  // }
+      if (location.includes('validate.perfdrive')) {
+        return NextResponse.json({ result: ResponseMatchType.RadwareBlock });
+      }
+    }
 
     const text = await response.text();
     const cookies = response.headers.get('set-cookie');
