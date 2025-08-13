@@ -42,24 +42,29 @@ Then, open [http://localhost:3000](http://localhost:3000) with your browser to s
 
 ### FIs covered on this version (and possible issues not solved yet)
 
-| FI                      | Possible Issue |
+| Framework               | Possible Issue |
 |-------------------------|----------------|
+| AlkamiBankingSPA        | Incapsula      |
+| Architect               | -              |
+| Aurora                  | -              |
 | Banno                   | -              |
-| PBI1151                 | -              |
-| MyEbankingnet           | Proxy          |
+| ComericaPlatform        | -              |
+| Corillian               | -              |
+| DBank                   | -              |
+| D3Banking               | -              |
+| DCI                     | -              |
+| FIS                     | -              |
+| FISHTML                 | -              |
+| FirstDataFundsXpress    | Url Reject     |
+| ItsMe                   | -              |
+| Jwaala                  | JS Error       |
+| Mahalo                  | -              |
+| MyEbanking              | Proxy          |
 | MyVirtualBranch         | Captcha        |
 | NFinia                  | -              |
-| Corillian               | -              |
-| FISHTML                 | -              |
-| DBank                   | -              |
-| D3Bankingcom            | -              |
-| AuroraBankBin           | -              |
-| ItsMeauthentication     | -              |
-| AlkamiBankingSPA        | Incapsula      |
-| Jwaala                  | JS Error       |
+| Narmi                   | -              |
 | NetTeller               | -              |
-| FirstDataFundsXpresscom | Url Reject     |
-| ComericaPlatform        | -              |
+| PBI1151                 | -              |
 | SecureBank              | -              |
 
 ---
