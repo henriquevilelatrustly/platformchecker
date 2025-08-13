@@ -91,6 +91,9 @@ NNNN,FiName,url,,
 
 The only field checked and changed is the **URL** field. Another fields, on output file, will be kept same as in the original file.
 
+Observation:
+*This CSV columns and format was definied by an specific already existent table (for an specific case). Should be review in next official versions.*
+
 ---
 
 ### Troubleshooting
