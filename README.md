@@ -67,8 +67,20 @@ Then, open [http://localhost:3000](http://localhost:3000) with your browser to s
 | PBI1151                 | -              |
 | SecureBank              | -              |
 
----
 
+
+### Some errors covered:
+
+| Error          | Message                         |
+|----------------|---------------------------------|
+| Captcha        | Captcha Block                   |
+| Incapsula      | Need Incapsula Resource         |
+| No JS          | Javascript Block                |
+| Radware        | Radware Block                   |
+| Request Reject | The requested URL was rejected  |
+| Status Error   | Status Error                    |
+
+--- 
 ### Tips
 
 For better performance on requests (and less blocks or timeouts, for example, from PBI 1151 FIs), try to enable US VPN for US Banks.
