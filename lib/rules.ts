@@ -56,6 +56,14 @@ const rules: MatchRule[] = [
   },
   {
     matcher: (text, cookies, status) => {
+      return text.includes("fis-header-content") &&
+              text.includes("fis-threatmetrix-profile") &&
+              (cookies?.includes("CurrentBranding") ?? false);
+    },
+    result: ResponseMatchType.FIS
+  },
+  {
+    matcher: (text, cookies, status) => {
       return (text.includes("SignonControl_UserIdTextBox") &&
              text.includes("SignonControl_PasswordTextBox"));
     },
@@ -116,10 +124,6 @@ const rules: MatchRule[] = [
   {
     pattern: /corillian/i,
     result: ResponseMatchType.Corillian,
-  },
-  {
-    pattern: /fis-page-content/i,
-    result: ResponseMatchType.FIS,
   },
   {
     pattern: /fis-override/i,
