@@ -3,7 +3,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { analyzeResponseText, ResponseMatchType } from '@/lib/rules';
 
-export const runtime = 'nodejs'; // optional: ensures Node runtime is used
+export const runtime = 'nodejs'; // ensures Node runtime is used
 
 export async function POST(req: NextRequest) {
   const { url } = await req.json();
@@ -12,7 +12,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ result: ResponseMatchType.Unknown }, { status: 400 });
   }
 
-  // Create AbortController with 15s timeout
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000); // 15s timeout
 
@@ -29,7 +28,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    clearTimeout(timeout); // Clear timeout if success
+    clearTimeout(timeout);
 
     if (response.status >= 300 && response.status < 400) {
       const location = response.headers.get('location') ?? '';
